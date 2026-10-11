@@ -1,0 +1,474 @@
+# Launch sites. One entry per canonical site (the GCAT site code; GCAT codes carry the era,
+# e.g. NIIP-5 is Soviet-era Baikonur and GIK-5 Russian-era Baikonur). Space-Track and legacy
+# KeepTrack codes are aliases. Seeded from the GCAT sites table for every site that has
+# hosted an orbital or deep-space launch; see SEEDING-NOTES.md.
+#
+#   code     canonical code (quoted)
+#   aliases  Space-Track / legacy KeepTrack codes for the same site
+#   name     English display name
+#   state    canonical country code from countries.yaml (the attributed state, following
+#            GCAT: the operating nation for some sites, e.g. GIK-5 Baikonur -> RU)
+#   lat/lon  decimal degrees (GCAT coordinates)
+#   wiki     English Wikipedia URL or null
+
+- code: 'ALCA'
+  aliases: ['ALC', 'ALCSC']
+  name: Alcântara Launch Center
+  state: 'BR'
+  lat: -2.317
+  lon: -44.3671
+  wiki: https://en.wikipedia.org/wiki/Alc%C3%A2ntara_Launch_Center
+- code: 'AND'
+  aliases: ['ANDSP']
+  name: Andøya Space
+  state: 'N'
+  lat: 69.2943
+  lon: 16.0207
+  wiki: https://en.wikipedia.org/wiki/And%C3%B8ya_Space
+- code: 'BLA'
+  aliases: ['SADOL', 'SUBL']
+  name: Barents Sea Launch Area
+  state: 'SU'
+  lat: 70
+  lon: 34
+  wiki: https://en.wikipedia.org/wiki/Submarine-launched_ballistic_missile
+- code: 'BOWEN'
+  aliases: ['BOS']
+  name: Bowen Orbital Spaceport
+  state: 'AU'
+  lat: -19.9582
+  lon: 148.1136
+  wiki: https://en.wikipedia.org/wiki/Gilmour_Space_Technologies
+- code: 'CC'
+  aliases: ['AFETR', 'ERAS']
+  name: Cape Canaveral Space Force Station
+  state: 'US'
+  lat: 28.46
+  lon: -80.54
+  wiki: https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Force_Station
+- code: 'CSG'
+  aliases: ['FRGUI']
+  name: Guiana Space Centre
+  state: 'GUF'
+  lat: 5.2333
+  lon: -52.7517
+  wiki: https://en.wikipedia.org/wiki/Guiana_Space_Centre
+- code: 'EAFB'
+  aliases: []
+  name: Edwards Air Force Base
+  state: 'US'
+  lat: 34.9
+  lon: -117.8
+  wiki: https://en.wikipedia.org/wiki/Edwards_Air_Force_Base
+# PROVISIONAL: GCAT code seen in 2026 launch history but absent from the 2026-03-04 GCAT
+# copy. Assumed to be a Chinese East China Sea launch area; state and coordinates are
+# best-supported guesses (sea centroid). See SEEDING-NOTES.md.
+- code: 'ECS'
+  aliases: []
+  name: East China Sea Launch Area
+  state: 'CN'
+  lat: 29
+  lon: 123.5
+  wiki: https://en.wikipedia.org/wiki/East_China_Sea
+- code: 'GANC'
+  aliases: ['CAS']
+  name: 'Gando Air Base, Gran Canaria'
+  state: 'ESCN'
+  lat: 27.92
+  lon: -15.32
+  wiki: https://en.wikipedia.org/wiki/Gando_Air_Base
+- code: 'GIK-1'
+  aliases: ['PKMTR', 'PLMSC']
+  name: Plesetsk Cosmodrome
+  state: 'RU'
+  lat: 62.9
+  lon: 40.5
+  wiki: https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome
+- code: 'GIK-2'
+  aliases: ['SVOB', 'SVOBO']
+  name: Svobodny Cosmodrome
+  state: 'RU'
+  lat: 51.79
+  lon: 128.19
+  wiki: https://en.wikipedia.org/wiki/Svobodny_Cosmodrome
+- code: 'GIK-5'
+  aliases: ['TTMTR', 'TYMSC']
+  name: Baikonur Cosmodrome
+  state: 'RU'
+  lat: 46
+  lon: 63
+  wiki: https://en.wikipedia.org/wiki/Baikonur_Cosmodrome
+- code: 'GNIIP'
+  aliases: []
+  name: Plesetsk Cosmodrome (GNIIP)
+  state: 'RU'
+  lat: 63
+  lon: 41.1
+  wiki: https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome
+- code: 'GNIIPV'
+  aliases: []
+  name: 'Plesetsk Cosmodrome (GNIIP, VKS section)'
+  state: 'RU'
+  lat: 62.9
+  lon: 40.5
+  wiki: https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome
+- code: 'GTsMP-4'
+  aliases: ['KYMSC', 'KYMTR']
+  name: Kapustin Yar
+  state: 'RU'
+  lat: 48.5
+  lon: 45.8
+  wiki: https://en.wikipedia.org/wiki/Kapustin_Yar
+- code: 'GTsP-4'
+  aliases: []
+  name: Kapustin Yar (GTsP-4)
+  state: 'SU'
+  lat: 48.5
+  lon: 45.8
+  wiki: https://en.wikipedia.org/wiki/Kapustin_Yar
+- code: 'HCSLS'
+  aliases: []
+  name: Hainan Commercial Spacecraft Launch Site
+  state: 'CN'
+  lat: 19.5968
+  lon: 110.9308
+  wiki: https://en.wikipedia.org/wiki/Hainan_Commercial_Spacecraft_Launch_Site
+- code: 'HHAI'
+  aliases: ['YSLA']
+  name: Yellow Sea Launch Area
+  state: 'CN'
+  lat: 34.9
+  lon: 121.19
+  wiki: null
+- code: 'HMG'
+  aliases: ['HGSTR']
+  name: Hammaguir
+  state: 'DZ'
+  lat: 30.887
+  lon: -3.083
+  wiki: https://en.wikipedia.org/wiki/Hammaguir
+- code: 'JEJU'
+  aliases: ['JJSLA']
+  name: Jeju Sea Launch Area
+  state: 'KR'
+  lat: 33.2
+  lon: 126.4
+  wiki: https://en.wikipedia.org/wiki/Jeju_Island
+- code: 'JQ'
+  aliases: ['JSC']
+  name: Jiuquan Satellite Launch Center
+  state: 'CN'
+  lat: 41.31
+  lon: 100.31
+  wiki: https://en.wikipedia.org/wiki/Jiuquan_Satellite_Launch_Center
+- code: 'KASC'
+  aliases: []
+  name: Kagoshima Space Center
+  state: 'J'
+  lat: 31.25
+  lon: 131.079
+  wiki: https://en.wikipedia.org/wiki/Uchinoura_Space_Center
+- code: 'KAU'
+  aliases: ['PMRF']
+  name: 'Pacific Missile Range Facility, Barking Sands'
+  state: 'US'
+  lat: 22.058
+  lon: -159.777
+  wiki: https://en.wikipedia.org/wiki/Pacific_Missile_Range_Facility
+- code: 'KII'
+  aliases: ['SPKII']
+  name: Spaceport Kii
+  state: 'J'
+  lat: 33.5443
+  lon: 135.8895
+  wiki: https://en.wikipedia.org/wiki/Spaceport_Kii
+- code: 'KLA'
+  aliases: ['SEAL']
+  name: 'Sea Launch, Kiritimati Launch Area'
+  state: 'KI'
+  lat: 0
+  lon: -154
+  wiki: https://en.wikipedia.org/wiki/Sea_Launch
+- code: 'KLC'
+  aliases: []
+  name: Kodiak Launch Complex
+  state: 'US'
+  lat: 57.4359
+  lon: -152.3378
+  wiki: https://en.wikipedia.org/wiki/Pacific_Spaceport_Complex_%E2%80%93_Alaska
+- code: 'KMR'
+  aliases: ['KWAJ']
+  name: Kwajalein Atoll (Reagan Test Site)
+  state: 'TTPI'
+  lat: 8.9917
+  lon: 167.72
+  wiki: https://en.wikipedia.org/wiki/Reagan_Test_Site
+- code: 'KSC'
+  aliases: []
+  name: Kennedy Space Center
+  state: 'US'
+  lat: 28.6083
+  lon: -80.6041
+  wiki: https://en.wikipedia.org/wiki/Kennedy_Space_Center
+- code: 'MAHIA'
+  aliases: ['RLLB', 'RLLC']
+  name: Rocket Lab Launch Complex 1
+  state: 'NZ'
+  lat: -39.2609
+  lon: 177.8655
+  wiki: https://en.wikipedia.org/wiki/Rocket_Lab_Launch_Complex_1
+- code: 'MARS'
+  aliases: []
+  name: Mid-Atlantic Regional Spaceport
+  state: 'US'
+  lat: 37.83
+  lon: -75.48
+  wiki: https://en.wikipedia.org/wiki/Mid-Atlantic_Regional_Spaceport
+- code: 'MHV'
+  aliases: []
+  name: Mojave Air and Space Port
+  state: 'US'
+  lat: 35.0487
+  lon: -118.1357
+  wiki: https://en.wikipedia.org/wiki/Mojave_Air_and_Space_Port
+- code: 'NARO'
+  aliases: ['NSC']
+  name: Naro Space Center
+  state: 'KR'
+  lat: 34.4318
+  lon: 127.5363
+  wiki: https://en.wikipedia.org/wiki/Naro_Space_Center
+- code: 'NEWQ'
+  aliases: []
+  name: 'Spaceport Cornwall, Newquay'
+  state: 'UK'
+  lat: 50.4408
+  lon: -5.0076
+  wiki: https://en.wikipedia.org/wiki/Spaceport_Cornwall
+- code: 'NIIP-5'
+  aliases: []
+  name: Baikonur Cosmodrome (NIIP-5)
+  state: 'SU'
+  lat: 46
+  lon: 63
+  wiki: https://en.wikipedia.org/wiki/Baikonur_Cosmodrome
+- code: 'NIIP-53'
+  aliases: []
+  name: Plesetsk Cosmodrome (NIIP-53)
+  state: 'SU'
+  lat: 62.9
+  lon: 40.5
+  wiki: https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome
+- code: 'NOTS'
+  aliases: []
+  name: 'Naval Ordnance Test Station, China Lake'
+  state: 'US'
+  lat: 35.58
+  lon: -117.17
+  wiki: https://en.wikipedia.org/wiki/Naval_Air_Weapons_Station_China_Lake
+- code: 'PA'
+  aliases: []
+  name: Point Arguello
+  state: 'US'
+  lat: 34.62
+  lon: -120.6
+  wiki: https://en.wikipedia.org/wiki/Point_Arguello
+- code: 'PALB'
+  aliases: ['YAVNE']
+  name: Palmachim Airbase
+  state: 'IL'
+  lat: 31.9
+  lon: 34.7
+  wiki: https://en.wikipedia.org/wiki/Palmachim_Airbase
+- code: 'PSCA'
+  aliases: ['KODAK']
+  name: Pacific Spaceport Complex Alaska
+  state: 'US'
+  lat: 57.4359
+  lon: -152.3378
+  wiki: https://en.wikipedia.org/wiki/Pacific_Spaceport_Complex_%E2%80%93_Alaska
+- code: 'SEM'
+  aliases: ['SEMLS']
+  name: Semnan Spaceport
+  state: 'IR'
+  lat: 35.2347
+  lon: 53.921
+  wiki: https://en.wikipedia.org/wiki/Imam_Khomeini_Spaceport
+- code: 'SHAHR'
+  aliases: ['SHASC', 'SMTS']
+  name: Shahroud Space Center
+  state: 'IR'
+  lat: 36.23
+  lon: 55.33
+  wiki: https://en.wikipedia.org/wiki/Shahroud_Space_Center
+- code: 'SHAR'
+  aliases: ['SRI', 'SRILR']
+  name: Satish Dhawan Space Centre
+  state: 'IN'
+  lat: 13.621
+  lon: 80.303
+  wiki: https://en.wikipedia.org/wiki/Satish_Dhawan_Space_Centre
+# GCAT code for Sriharikota from 2002 (UCode SHAR). Space-Track SRI stays an alias of SHAR.
+- code: 'SDSC'
+  aliases: []
+  name: Satish Dhawan Space Centre
+  state: 'IN'
+  lat: 13.621
+  lon: 80.303
+  wiki: https://en.wikipedia.org/wiki/Satish_Dhawan_Space_Centre
+- code: 'SMLC'
+  aliases: ['SNMLP']
+  name: San Marco Platform (Broglio Space Centre)
+  state: 'KE'
+  lat: -2.9408
+  lon: 40.2134
+  wiki: https://en.wikipedia.org/wiki/Broglio_Space_Centre
+- code: 'SOHAE'
+  aliases: ['YUN']
+  name: Sohae Satellite Launching Station
+  state: 'KP'
+  lat: 39.66
+  lon: 124.706
+  wiki: https://en.wikipedia.org/wiki/Sohae_Satellite_Launching_Station
+- code: 'SPFL'
+  aliases: []
+  name: 'Spaceport Florida, Cape Canaveral'
+  state: 'US'
+  lat: 28.4583
+  lon: -80.5272
+  wiki: https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_46
+- code: 'SPFLA'
+  aliases: []
+  name: 'Space Florida, Cape Canaveral'
+  state: 'US'
+  lat: 28.4583
+  lon: -80.5272
+  wiki: https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Launch_Complex_46
+- code: 'STB'
+  aliases: ['BOCA', 'STARB', 'STARBASE']
+  name: Starbase
+  state: 'US'
+  lat: 25.9964
+  lon: -97.1536
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Starbase
+- code: 'TNSC'
+  aliases: ['TANSC', 'TNSTA']
+  name: Tanegashima Space Center
+  state: 'J'
+  lat: 30.4
+  lon: 130.97
+  wiki: https://en.wikipedia.org/wiki/Tanegashima_Space_Center
+- code: 'TONGH'
+  aliases: ['TNGH']
+  name: Tonghae Satellite Launching Ground
+  state: 'KP'
+  lat: 40.85
+  lon: 129.6666
+  wiki: https://en.wikipedia.org/wiki/Tonghae_Satellite_Launching_Ground
+- code: 'TYSC'
+  aliases: ['TAISC', 'TSC']
+  name: Taiyuan Satellite Launch Center
+  state: 'CN'
+  lat: 37.5
+  lon: 112.6
+  wiki: https://en.wikipedia.org/wiki/Taiyuan_Satellite_Launch_Center
+- code: 'USC'
+  aliases: ['KSCUT']
+  name: Uchinoura Space Center
+  state: 'J'
+  lat: 31.25
+  lon: 131.079
+  wiki: https://en.wikipedia.org/wiki/Uchinoura_Space_Center
+- code: 'V'
+  aliases: ['WRAS']
+  name: Vandenberg Air Force Base
+  state: 'US'
+  lat: 34.75
+  lon: -120.62
+  wiki: https://en.wikipedia.org/wiki/Vandenberg_Space_Force_Base
+- code: 'VOST'
+  aliases: ['VOSTO']
+  name: Vostochny Cosmodrome
+  state: 'RU'
+  lat: 51.7
+  lon: 128
+  wiki: https://en.wikipedia.org/wiki/Vostochny_Cosmodrome
+- code: 'VS'
+  aliases: []
+  name: 'Vandenberg Air Force Base, South Base'
+  state: 'US'
+  lat: 34.63
+  lon: -120.61
+  wiki: https://en.wikipedia.org/wiki/Vandenberg_Space_Force_Base
+- code: 'VSFB'
+  aliases: ['AFWTR']
+  name: Vandenberg Space Force Base
+  state: 'US'
+  lat: 34.75
+  lon: -120.62
+  wiki: https://en.wikipedia.org/wiki/Vandenberg_Space_Force_Base
+- code: 'VSFBS'
+  aliases: []
+  name: 'Vandenberg Space Force Base, South Base'
+  state: 'US'
+  lat: 34.63
+  lon: -120.61
+  wiki: https://en.wikipedia.org/wiki/Vandenberg_Space_Force_Base
+- code: 'WEN'
+  aliases: ['WSC']
+  name: Wenchang Space Launch Site
+  state: 'CN'
+  lat: 19.6142
+  lon: 110.9511
+  wiki: https://en.wikipedia.org/wiki/Wenchang_Space_Launch_Site
+- code: 'WI'
+  aliases: ['WLPIS']
+  name: Wallops Flight Facility
+  state: 'US'
+  lat: 37.83
+  lon: -75.48
+  wiki: https://en.wikipedia.org/wiki/Wallops_Flight_Facility
+- code: 'WIMB'
+  aliases: []
+  name: Wallops Island Main Base
+  state: 'US'
+  lat: 37.9383
+  lon: -75.4633
+  wiki: https://en.wikipedia.org/wiki/Wallops_Flight_Facility
+- code: 'WOO'
+  aliases: ['WOMRA']
+  name: Woomera Range Complex
+  state: 'AU'
+  lat: -30.925
+  lon: 136.5
+  wiki: https://en.wikipedia.org/wiki/RAAF_Woomera_Range_Complex
+- code: 'XSC'
+  aliases: ['XICLF']
+  name: Xichang Satellite Launch Center
+  state: 'CN'
+  lat: 28.2472
+  lon: 102.0291
+  wiki: https://en.wikipedia.org/wiki/Xichang_Satellite_Launch_Center
+- code: 'YAS'
+  aliases: ['DLS', 'OREN']
+  name: Yasny Launch Base (Dombarovsky)
+  state: 'RU'
+  lat: 50.75
+  lon: 59.5
+  wiki: https://en.wikipedia.org/wiki/Yasny_Cosmodrome
+- code: 'YJ'
+  aliases: ['SCSLA']
+  name: Yangjiang Sea Launch Area
+  state: 'CN'
+  lat: 21.28
+  lon: 112
+  wiki: null
+# Not in GCAT yet (no launch). AMH is the legacy KeepTrack / Space-Track-style code, kept as a
+# PROVISIONAL canonical code until GCAT assigns one; coordinates approximate. See SEEDING-NOTES.md.
+- code: 'AMH'
+  aliases: []
+  name: 'Sutherland Spaceport (A'' Mhòine)'
+  state: 'SCOT'
+  lat: 58.51
+  lon: -4.52
+  wiki: https://en.wikipedia.org/wiki/Sutherland_spaceport

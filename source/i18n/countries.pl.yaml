@@ -1,0 +1,203 @@
+# Polish (pl) country names, keyed by canonical code from countries.yaml.
+# Every canonical code needs a name here; aliases are resolved by the build.
+
+'AAT': Australijskie Terytorium Antarktyczne
+'ABS': Asia Broadcast Satellite
+'AC': AsiaSat Corp
+'ADG': Adygeja
+'AF': Afganistan
+'AG': Antigua
+'ALL': Wszystkie
+'AM': Armenia
+'ANALSAT': Satelita analityczny
+'ANTN': Antyle Hol.
+'AO': Angola
+'AQ': Antarktyka
+'AR': Argentyna
+'ARV': Antarktyka Arg.
+'AT': Austria
+'AU': Australia
+'AZ': Azerbejdżan
+'B': Belgia
+'BASH': Baszkiria
+'BAT': Brytyjskie Terytorium Antarktyczne
+'BB': Barbados
+'BD': Bangladesz
+'BG': Bułgaria
+'BGN': RL Bułgaria
+'BH': Bahrajn
+'BM': Bermudy
+'BO': Boliwia
+'BR': Brazylia
+'BS': Bahamy
+'BT': Bhutan
+'BW': Botswana
+'BY': Białoruś
+'CA': Kanada
+'CD': DR Kongo
+'CH': Szwajcaria
+'CHBZ': Chiny/Brazylia
+'CI': Wybrzeże Kości Słoniowej
+'CIS': ZSRR/Rosja
+'CK': Wyspy Cooka
+'CL': Chile
+'CM': Kamerun
+'CN': Chiny
+'CO': Kolumbia
+'COLP': Kongo
+'CR': Kostaryka
+'CSSR': Czechosłowacja
+'CU': Kuba
+'CYM': Kajmany
+'CYMRU': Walia
+'CZ': Czechy
+'D': Niemcy
+'DAG': Dagestan
+'DD': NRD
+'DJ': Dżibuti
+'DK': Dania
+'DML': Ziemia Królowej Maud
+'DR': Niemcy (Rzesza)
+'DX': Niemcy (okup.)
+'DZ': Algieria
+'E': Hiszpania
+'EC': Ekwador
+'EE': Estonia
+'EG': Egipt
+'ENG': Anglia
+'ESA/JAXA': Europejska Agencja Kosmiczna/Japonia
+'ESCN': Wyspy Kanaryjskie
+'ESIB': Baleary
+'ET': Etiopia
+'F': Francja
+'FGER': Francja/Niemcy
+'FI': Finlandia
+'FRIT': Francja/Włochy
+'GE': Gruzja
+'GH': Ghana
+'GI': Gibraltar
+'GL': Grenlandia
+'GR': Grecja
+'GRD': Grenada
+'GT': Gwatemala
+'GU': Guam
+'GUF': Gujana Francuska
+'HK': Chiny (Hongkong)
+'HKUK': Hongkong
+'HR': Chorwacja
+'HU': Węgry
+'I': Włochy
+'I-ARAB': Arabsat
+'I-CSC1': COSPAS-SARSAT
+'I-ELDO': Europejska Organizacja Rozwoju Rakiet Nośnych
+'I-ESA': Europejska Agencja Kosmiczna
+'I-ESRO': Europejska Organizacja Badań Kosmicznych
+'I-EU': UE
+'I-EUM': EUMETSAT
+'I-EUT': EUTELSAT
+'I-INM': INMARSAT
+'I-INT': INTELSAT
+'I-ISS': ISS
+'I-NATO': Organizacja Traktatu Północnoatlantyckiego
+'I-RASC': RASCOM
+'ID': Indonezja
+'IE': Irlandia
+'IL': Izrael
+'IN': Indie
+'IQ': Irak
+'IR': Iran
+'IS': Islandia
+'ISS': Międzynarodowa
+'J': Japonia
+'JO': Jordania
+'KE': Kenia
+'KG': Kirgistan
+'KGSR': Kirgiski SRR
+'KH': Kambodża
+'KI': Kiribati
+'KP': Korea Północna
+'KR': Korea Południowa
+'KW': Kuwejt
+'KZ': Kazachstan
+'L': Luksemburg
+'LA': Laos
+'LB': Liban
+'LK': Sri Lanka
+'LT': Litwa
+'LV': Łotwa
+'LY': Libia
+'MA': Maroko
+'MC': Monako
+'MD': Mołdawia
+'ME': Czarnogóra
+'MH': Wyspy Marshalla
+'MN': Mongolia
+'MR': Mauretania
+'MU': Mauritius
+'MV': Malediwy
+'MX': Meksyk
+'MY': Malezja
+'MYM': Mjanma
+'N': Norwegia
+'NG': Nigeria
+'NL': Holandia
+'NP': Nepal
+'NZ': Nowa Zelandia
+'NZRD': Dep. Rossa
+'OM': Oman
+'P': Portugalia
+'PAR': Panama
+'PCZ': Strefa Kanału
+'PE': Peru
+'PG': Papua-Nowa Gwinea
+'PH': Filipiny
+'PK': Pakistan
+'PL': Polska
+'PR': Portoryko
+'PY': Paragwaj
+'QA': Katar
+'RO': Rumunia
+'RU': Rosja
+'RW': Rwanda
+'S': Szwecja
+'SA': Arabia Saudyjska
+'SB': Wyspy Salomona
+'SCOT': Szkocja
+'SD': Sudan
+'SG': Singapur
+'SH': Wyspa Świętej Heleny
+'SI': Słowenia
+'SK': Słowacja
+'SN': Senegal
+'SR': Surinam
+'STCT': Singapur/Tajwan
+'SU': ZSRR
+'SY': Syria
+'T': Tajlandia
+'TBD': Nieznane
+'TC': Turks i Caicos
+'TF': TAAF
+'TJ': Tadżykistan
+'TM': Turkmenistan
+'TMMC': Turkmenistan/Monako
+'TN': Tunezja
+'TO': Tonga
+'TR': Turcja
+'TTPI': Terytorium Powiernicze Wysp Pacyfiku
+'TUVA': Tuwa
+'TW': Tajwan
+'UA': Ukraina
+'UAE': Zjednoczone Emiraty Arabskie
+'UG': Uganda
+'UK': Wielka Brytania
+'UM': Wyspa Wake
+'US': Stany Zjednoczone
+'USBZ': Stany Zjednoczone/Brazylia
+'UY': Urugwaj
+'UZ': Uzbekistan
+'VE': Wenezuela
+'VN': Wietnam
+'YE': Jemen
+'ZA': Republika Południowej Afryki
+'ZR': Zair
+'ZW': Zimbabwe

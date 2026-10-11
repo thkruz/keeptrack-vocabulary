@@ -1,0 +1,99 @@
+name: vocabulary
+
+# PR: lint, test, validate + build, and post the snapshot diff against the base branch.
+# Push to main: the same checks, then publish ONE build to R2 (pinned path), npm, and R2 (latest),
+# in that order, so the two channels always carry the same version.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: vocabulary-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm test
+      - name: Validate and build
+        run: pnpm build
+
+      - name: Snapshot diff vs base branch
+        if: github.event_name == 'pull_request'
+        run: |
+          git worktree add ../base "origin/${{ github.base_ref }}"
+          if (cd ../base && pnpm install --frozen-lockfile && pnpm build --out dist-base) >/dev/null 2>&1; then
+            pnpm -s diff ../base/dist-base dist | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Base branch did not build; no snapshot diff." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+  publish:
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: vocabulary-publish
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write # npm provenance
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: keeptrack
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Pick the next version (from the live R2 manifest)
+        run: echo "VOCAB_VERSION=$(pnpm -s next-version)" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: pnpm build --version "$VOCAB_VERSION"
+
+      - name: R2 pinned (vocabulary/v1/<version>/)
+        run: pnpm publish:r2 --target pinned
+
+      - name: npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm version "$(pnpm -s npm-version "$VOCAB_VERSION")" --no-git-tag-version
+          npm publish --access public --provenance --tag latest
+
+      - name: R2 latest (vocabulary/v1/)
+        run: pnpm publish:r2 --target latest
+
+      - name: Summary
+        run: echo "Published vocabulary $VOCAB_VERSION to R2 and npm" >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,56 @@
+{
+  "name": "@keeptrack/vocabulary",
+  "version": "0.0.0",
+  "description": "KeepTrack's shared vocabulary: country/state codes, launch sites, flags and localized names, as denormalized JSON lookup tables.",
+  "license": "MIT",
+  "author": "Theodore Kruczek",
+  "homepage": "https://github.com/thkruz/keeptrack-vocabulary#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thkruz/keeptrack-vocabulary.git"
+  },
+  "keywords": ["keeptrack", "satellites", "countries", "launch-sites", "gcat", "space-track"],
+  "type": "module",
+  "files": ["dist/*.json", "dist/types.d.ts"],
+  "types": "./dist/types.d.ts",
+  "exports": {
+    "./types": {
+      "types": "./dist/types.d.ts"
+    },
+    "./*.json": "./dist/*.json",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "validate": "tsx scripts/build.ts --check",
+    "diff": "tsx scripts/diff.ts",
+    "next-version": "tsx scripts/next-version.ts",
+    "publish:r2": "tsx scripts/publish.ts",
+    "npm-version": "tsx scripts/npm-version.ts",
+    "harvest:sites": "tsx scripts/harvest-gcat-sites.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "biome check . && tsc --noEmit -p tsconfig.json",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write ."
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1149.0",
+    "@biomejs/biome": "2.5.4",
+    "@types/node": "^22.20.5",
+    "flag-icons": "7.5.0",
+    "tsx": "4.23.4",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18",
+    "yaml": "^2.9.1"
+  }
+}

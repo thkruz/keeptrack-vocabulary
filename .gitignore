@@ -1,0 +1,18 @@
+# build output (published to R2 and npm by CI, never committed)
+dist/
+
+# dependencies
+node_modules/
+
+# logs
+*.log
+
+# environment variables
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

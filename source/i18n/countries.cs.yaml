@@ -1,0 +1,203 @@
+# Czech (cs) country names, keyed by canonical code from countries.yaml.
+# Every canonical code needs a name here; aliases are resolved by the build.
+
+'AAT': Australské antarktické území
+'ABS': Asia Broadcast Satellite
+'AC': AsiaSat Corp
+'ADG': Adygejsko
+'AF': Afghánistán
+'AG': Antigua
+'ALL': Vše
+'AM': Arménie
+'ANALSAT': Analytický satelit
+'ANTN': Niz. Antily
+'AO': Angola
+'AQ': Antarktida
+'AR': Argentina
+'ARV': Arg. Antarktida
+'AT': Rakousko
+'AU': Austrálie
+'AZ': Ázerbájdžán
+'B': Belgie
+'BASH': Baškirsko
+'BAT': Britské antarktické území
+'BB': Barbados
+'BD': Bangladéš
+'BG': Bulharsko
+'BGN': LR Bulharsko
+'BH': Bahrajn
+'BM': Bermudy
+'BO': Bolívie
+'BR': Brazílie
+'BS': Bahamy
+'BT': Bhútán
+'BW': Botswana
+'BY': Bělorusko
+'CA': Kanada
+'CD': DR Kongo
+'CH': Švýcarsko
+'CHBZ': Čína/Brazílie
+'CI': Pobřeží slonoviny
+'CIS': SSSR/Rusko
+'CK': Cookovy ostrovy
+'CL': Chile
+'CM': Kamerun
+'CN': Čína
+'CO': Kolumbie
+'COLP': Kongo
+'CR': Kostarika
+'CSSR': Československo
+'CU': Kuba
+'CYM': Kajmanské o.
+'CYMRU': Wales
+'CZ': Česká republika
+'D': Německo
+'DAG': Dagestán
+'DD': Východní Německo
+'DJ': Džibutsko
+'DK': Dánsko
+'DML': Země královny Maud
+'DR': Německo (Říše)
+'DX': Německo (okup.)
+'DZ': Alžírsko
+'E': Španělsko
+'EC': Ekvádor
+'EE': Estonsko
+'EG': Egypt
+'ENG': Anglie
+'ESA/JAXA': Evropská kosmická agentura/Japonsko
+'ESCN': Kanárské o.
+'ESIB': Baleáry
+'ET': Etiopie
+'F': Francie
+'FGER': Francie/Německo
+'FI': Finsko
+'FRIT': Francie/Itálie
+'GE': Gruzie
+'GH': Ghana
+'GI': Gibraltar
+'GL': Grónsko
+'GR': Řecko
+'GRD': Grenada
+'GT': Guatemala
+'GU': Guam
+'GUF': Francouzská Guyana
+'HK': Čína (Hongkong)
+'HKUK': Hongkong
+'HR': Chorvatsko
+'HU': Maďarsko
+'I': Itálie
+'I-ARAB': Arabsat
+'I-CSC1': COSPAS-SARSAT
+'I-ELDO': Evropská organizace pro vývoj nosných raket
+'I-ESA': Evropská kosmická agentura
+'I-ESRO': Evropská organizace pro kosmický výzkum
+'I-EU': EU
+'I-EUM': EUMETSAT
+'I-EUT': EUTELSAT
+'I-INM': INMARSAT
+'I-INT': INTELSAT
+'I-ISS': ISS
+'I-NATO': Organizace Severoatlantické smlouvy
+'I-RASC': RASCOM
+'ID': Indonésie
+'IE': Irsko
+'IL': Izrael
+'IN': Indie
+'IQ': Irák
+'IR': Írán
+'IS': Island
+'ISS': Mezinárodní
+'J': Japonsko
+'JO': Jordánsko
+'KE': Keňa
+'KG': Kyrgyzstán
+'KGSR': Kyrgyzská SSR
+'KH': Kambodža
+'KI': Kiribati
+'KP': Severní Korea
+'KR': Jižní Korea
+'KW': Kuvajt
+'KZ': Kazachstán
+'L': Lucembursko
+'LA': Laos
+'LB': Libanon
+'LK': Srí Lanka
+'LT': Litva
+'LV': Lotyšsko
+'LY': Libye
+'MA': Maroko
+'MC': Monako
+'MD': Moldavsko
+'ME': Černá Hora
+'MH': Marshallovy o.
+'MN': Mongolsko
+'MR': Mauritánie
+'MU': Mauricius
+'MV': Maledivy
+'MX': Mexiko
+'MY': Malajsie
+'MYM': Myanmar
+'N': Norsko
+'NG': Nigérie
+'NL': Nizozemsko
+'NP': Nepál
+'NZ': Nový Zéland
+'NZRD': Rossova dep.
+'OM': Omán
+'P': Portugalsko
+'PAR': Panama
+'PCZ': Průplavní zóna
+'PE': Peru
+'PG': Papua Nová Guinea
+'PH': Filipíny
+'PK': Pákistán
+'PL': Polsko
+'PR': Portoriko
+'PY': Paraguay
+'QA': Katar
+'RO': Rumunsko
+'RU': Rusko
+'RW': Rwanda
+'S': Švédsko
+'SA': Saúdská Arábie
+'SB': Šalamounovy ostrovy
+'SCOT': Skotsko
+'SD': Súdán
+'SG': Singapur
+'SH': Sv. Helena
+'SI': Slovinsko
+'SK': Slovensko
+'SN': Senegal
+'SR': Surinam
+'STCT': Singapur/Tchaj-wan
+'SU': SSSR
+'SY': Sýrie
+'T': Thajsko
+'TBD': Neznámý
+'TC': Turks a Caicos
+'TF': Francouzské jižní úz.
+'TJ': Tádžikistán
+'TM': Turkmenistán
+'TMMC': Turkmenistán/Monako
+'TN': Tunisko
+'TO': Tonga
+'TR': Turecko
+'TTPI': Poručenské území Tichomořské ostrovy
+'TUVA': Tuva
+'TW': Tchaj-wan
+'UA': Ukrajina
+'UAE': Spojené arabské emiráty
+'UG': Uganda
+'UK': Spojené království
+'UM': Wake
+'US': Spojené státy
+'USBZ': Spojené státy/Brazílie
+'UY': Uruguay
+'UZ': Uzbekistán
+'VE': Venezuela
+'VN': Vietnam
+'YE': Jemen
+'ZA': Jihoafrická republika
+'ZR': Zair
+'ZW': Zimbabwe
