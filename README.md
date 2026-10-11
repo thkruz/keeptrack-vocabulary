@@ -163,5 +163,5 @@ Publishing is CI-only (push to `main`): it needs `R2_ACCOUNT_ID`, `R2_ACCESS_KEY
 
 ## License
 
-MIT, Theodore Kruczek. Launch-site codes and coordinates derive from Jonathan McDowell's
+AGPL-3.0-only, Theodore Kruczek. Launch-site codes and coordinates derive from Jonathan McDowell's
 [GCAT](https://planet4589.org/space/gcat/) (CC-BY); country codes from GCAT and Space-Track.

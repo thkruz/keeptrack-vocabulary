@@ -2,7 +2,7 @@
   "name": "@keeptrack/vocabulary",
   "version": "0.0.0",
   "description": "KeepTrack's shared vocabulary: country/state codes, launch sites, flags and localized names, as denormalized JSON lookup tables.",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "author": "Theodore Kruczek",
   "homepage": "https://github.com/thkruz/keeptrack-vocabulary#readme",
   "repository": {
