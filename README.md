@@ -158,8 +158,29 @@ pnpm diff <baseDist>  # compare two builds
 pnpm publish:r2 --dry-run   # show what CI would upload
 ```
 
-Publishing is CI-only (push to `main`): it needs `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`,
-`R2_SECRET_ACCESS_KEY` and `NPM_TOKEN` secrets in the `production` environment.
+## Publishing
+
+CI publishes on every push to `main` (R2 pinned, then npm, then R2 latest) from the
+`production` environment, which holds `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID` and
+`R2_SECRET_ACCESS_KEY`. npm uses trusted publishing (OIDC), so there is no npm token:
+on npmjs.com, package Settings, "Trusted Publisher", choose GitHub Actions with
+organization `thkruz`, repository `keeptrack-vocabulary`, workflow `vocabulary.yml`,
+environment `production`.
+
+npm requires two-factor authentication or a trusted publisher for a new package, and a
+trusted publisher can only be configured on a package that already exists, so the FIRST
+release of a new package is published by hand with an authenticator code:
+
+```sh
+pnpm install
+pnpm build --version YYYY.MM.DD-1
+npm version "$(pnpm -s npm-version YYYY.MM.DD-1)" --no-git-tag-version
+npm publish --access public --otp=<code>
+git checkout package.json
+```
+
+Both the R2 pinned step and the npm step skip work that is already published with the
+same version, so a failed run is re-run from the Actions tab without cleanup.
 
 ## License
 

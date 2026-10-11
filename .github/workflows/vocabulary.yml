@@ -85,12 +85,20 @@ jobs:
       - name: R2 pinned (vocabulary/v1/<version>/)
         run: pnpm publish:r2 --target pinned
 
+      # Trusted publishing (OIDC): no npm token. The package's npm settings must list this
+      # repo + workflow + environment as a trusted publisher (README, "Publishing"). Needs
+      # npm >= 11.5.1, newer than the one bundled with Node 22.
       - name: npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm version "$(pnpm -s npm-version "$VOCAB_VERSION")" --no-git-tag-version
-          npm publish --access public --provenance --tag latest
+          npm install -g npm@latest
+          NPM_VERSION="$(pnpm -s npm-version "$VOCAB_VERSION")"
+          PKG="$(node -p "require('./package.json').name")"
+          if npm view "$PKG@$NPM_VERSION" version >/dev/null 2>&1; then
+            echo "$PKG@$NPM_VERSION is already on npm; skipping (resume)"
+          else
+            npm version "$NPM_VERSION" --no-git-tag-version
+            npm publish --access public --provenance --tag latest
+          fi
 
       - name: R2 latest (vocabulary/v1/)
         run: pnpm publish:r2 --target latest
