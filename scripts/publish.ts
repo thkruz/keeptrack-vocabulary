@@ -143,7 +143,7 @@ if (target === 'pinned' || target === 'all') {
       dataFiles.map(async (n) => {
         const r = await fetch(`${R2_PUBLIC_BASE}/${version}/${n}`, { headers: { 'cache-control': 'no-cache' } });
         return r.ok && stripped(await r.text()) === stripped(bodies.get(n)?.toString('utf8') ?? '');
-      }),
+      })
     );
     const same = remote.version === version && remote.schema === manifest.schema && checks.every(Boolean);
     if (!same) {
