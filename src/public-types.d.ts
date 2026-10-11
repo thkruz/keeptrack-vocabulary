@@ -1,8 +1,8 @@
-// Types for the JSON files in @keeptrack/vocabulary (also served at
+// Types for the JSON files in @kruczek-labs/keeptrack-vocabulary (also served at
 // https://r2.keeptrack.space/vocabulary/v1/<file>). Data only; there is no runtime code.
 //
-//   import type { CountriesByCode } from '@keeptrack/vocabulary/types';
-//   import byCode from '@keeptrack/vocabulary/countries.by-code.json' with { type: 'json' };
+//   import type { CountriesByCode } from '@kruczek-labs/keeptrack-vocabulary/types';
+//   import byCode from '@kruczek-labs/keeptrack-vocabulary/countries.by-code.json' with { type: 'json' };
 
 export type CountryKind = 'state' | 'org' | 'historical' | 'special';
 

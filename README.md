@@ -10,7 +10,7 @@ Published two ways from the same CI build, with the same version string:
 | Channel | Where | Used by |
 | --- | --- | --- |
 | R2 (live) | `https://r2.keeptrack.space/vocabulary/v1/<file>` (latest) and `.../vocabulary/v1/<version>/<file>` (pinned, immutable) | API, Pro, networked surfaces |
-| npm (bundled fallback) | `@keeptrack/vocabulary` | OSS builds, build-time consumers, the fallback when R2 is unreachable |
+| npm (bundled fallback) | `@kruczek-labs/keeptrack-vocabulary` | OSS builds, build-time consumers, the fallback when R2 is unreachable |
 
 The catalog keeps RAW codes (`COUNTRY`, `LAUNCH_SITE`). Resolution happens at read time by
 looking the raw code up in these tables.
@@ -60,12 +60,12 @@ name is ever one of those three keys.
 | `countries.groups.json` | `{ [group]: { name, slug, codes: [...] } }` | Hub pages and filter menus. `codes` lists every raw code (canonical and alias) to query. `slug` uses keeptrack-home's `slugify` rule. |
 | `sites.by-code.json` | `{ [code or alias]: { code, name, state, lat, lon, wiki } }` | `state` is a canonical country code. The `UNKNOWN` entry has `lat`/`lon` null. |
 | `manifest.json` | `{ schema, version, generatedAt, counts, files: { [file]: { sha256, bytes, keys } } }` | Written last on publish. |
-| `types.d.ts` (npm only) | TypeScript types for all of the above | `import type { CountriesByCode } from '@keeptrack/vocabulary/types'` |
+| `types.d.ts` (npm only) | TypeScript types for all of the above | `import type { CountriesByCode } from '@kruczek-labs/keeptrack-vocabulary/types'` |
 
 npm usage:
 
 ```ts
-import byCode from '@keeptrack/vocabulary/countries.by-code.json' with { type: 'json' };
+import byCode from '@kruczek-labs/keeptrack-vocabulary/countries.by-code.json' with { type: 'json' };
 ```
 
 ### Country kinds
