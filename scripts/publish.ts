@@ -110,21 +110,52 @@ if (live.ok) {
   throw new Error(`could not read the live manifest: ${live.status} ${live.statusText}`);
 }
 
+let uploads = plan;
 if (target === 'pinned' || target === 'all') {
   const pinnedManifest = `${R2_PREFIX}/${version}/${FILES.manifest}`;
+  let pinnedExists = false;
   try {
     await client.send(new HeadObjectCommand({ Bucket: bucket, Key: pinnedManifest }));
-    throw new Error(`${pinnedManifest} already exists; pinned versions are immutable`);
+    pinnedExists = true;
   } catch (err) {
     const status = (err as { $metadata?: { httpStatusCode?: number } }).$metadata?.httpStatusCode;
     if (status !== 404) {
       throw err;
     }
   }
+  if (pinnedExists) {
+    // A CI run that failed after the pinned upload (npm step, network) re-runs with the same
+    // version. Identical content is a resume, not an overwrite: skip the pinned objects.
+    // Different content under the same version is the immutability violation and still fails.
+    const res = await fetch(`${R2_PUBLIC_BASE}/${version}/${FILES.manifest}`, { headers: { 'cache-control': 'no-cache' } });
+    if (!res.ok) {
+      throw new Error(`${pinnedManifest} exists but could not be read: ${res.status} ${res.statusText}`);
+    }
+    const remote = (await res.json()) as Manifest;
+    // Every file embeds generatedAt, so sha256 differs between builds of the same data. Compare
+    // the data with that field removed; the emitter writes keys in a stable order.
+    const stripped = (text: string): string => {
+      const v = JSON.parse(text) as Record<string, unknown>;
+      delete v.generatedAt;
+      return JSON.stringify(v);
+    };
+    const checks = await Promise.all(
+      dataFiles.map(async (n) => {
+        const r = await fetch(`${R2_PUBLIC_BASE}/${version}/${n}`, { headers: { 'cache-control': 'no-cache' } });
+        return r.ok && stripped(await r.text()) === stripped(bodies.get(n)?.toString('utf8') ?? '');
+      }),
+    );
+    const same = remote.version === version && remote.schema === manifest.schema && checks.every(Boolean);
+    if (!same) {
+      throw new Error(`${pinnedManifest} already exists with different content; pinned versions are immutable`);
+    }
+    console.log(`pinned ${version} is already on R2 with identical content; skipping ${dataFiles.length + 1} objects (resume)`);
+    uploads = plan.filter((p) => !p.key.startsWith(`${R2_PREFIX}/${version}/`));
+  }
 }
 
 // ── Upload ────────────────────────────────────────────────────────────────────
-for (const p of plan) {
+for (const p of uploads) {
   // biome-ignore lint/performance/noAwaitInLoops: sequential on purpose; manifest.json must land last and the set is small
   await client.send(new PutObjectCommand({ Bucket: bucket, Key: p.key, Body: bodies.get(p.name), ContentType: 'application/json; charset=utf-8', CacheControl: p.cache }));
   console.log(`uploaded ${p.key}`);
